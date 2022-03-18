@@ -11,16 +11,16 @@ import Article from './pages/Article';
 import ArticleDetail from "./pages/ArticleDetail";
 
 function App() {
-  
+  const basename = process.env.REACT_APP_BASENAME;
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <Nav/>
       <Routes>
-        <Route path="/" element={<Products />} />
-        <Route path="products" element={<Products />} />
-        <Route path="products/:productId" element={<ProductDetail />} />
-        <Route path="article"  element={<Article />}  />
-        <Route path="article/:articleId" element={<ArticleDetail />}/>
+        <Route exact path="/" element={<Products />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/products/:productId" element={<ProductDetail />} />
+        <Route path="/article"  element={<Article />}  />
+        <Route path="/article/:articleId" element={<ArticleDetail />}/>
       </Routes>
     </BrowserRouter>
   )
